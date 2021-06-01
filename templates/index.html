@@ -9,6 +9,10 @@
 <body>
     <h1>Pets</h1>
 
+    {% for msg in get_flashed_messages() %}
+    <div>{{ msg }}</div>
+    {% endfor %}
+
     <div>
         {% for pet in pets %}
         {% if pet.photo_url %}

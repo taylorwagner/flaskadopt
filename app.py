@@ -27,6 +27,7 @@ def homepage():
 
 @app.route('/add', methods=['GET', 'POST'])
 def add_pet():
+    """Pet add form; handle adding"""
 
     form = AddNewPetForm()
 

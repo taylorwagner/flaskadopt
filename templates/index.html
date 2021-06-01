@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Adoption Agency</title>
+</head>
+<body>
+    <h1>Pets</h1>
+
+    <div>
+        {% for pet in pets %}
+        {% if pet.photo_url %}
+        <img src="{{pet.photo_url}}" alt="">
+        {% else %}
+        <h3>No photo available for {{pet.name}} at this time</h3>
+        {% endif %}
+        {% if pet.available %}
+        <p>{{pet.name}} <b>is available!</b></p>
+        {% else %}
+        <p>Sorry, {{pet.name}} is currently not available!</p>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+    <div>
+        <a href="/add">Add a New Pet</a>
+    </div>
+    
+</body>
+</html>

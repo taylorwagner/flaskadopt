@@ -14,4 +14,4 @@ pet5 = Pet(name="Mittens", species="kitty", photo_url="https://images.unsplash.c
 
 db.session.add_all([pet1, pet2, pet3, pet4, pet5])
 
-db.commit()
+db.session.commit()

@@ -37,8 +37,8 @@ def add_pet():
         photo_url = form.photo_url.data
         age = form.age.data
         notes = form.notes.data
-        flash(f"Added {name}!")
-        return redirect("/add")
+        flash(f"Added new pet:{name}!")
+        return redirect("/")
 
     else:
         return render_template(

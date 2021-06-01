@@ -37,6 +37,12 @@ def add_pet():
         photo_url = form.photo_url.data
         age = form.age.data
         notes = form.notes.data
+
+        new_pet = Pet(name=name, species=species, photo_url=photo_url, age=age, notes=notes)
+
+        db.session.add(new_pet)
+        db.session.commit()
+        
         flash(f"Added new pet:{name}!")
         return redirect("/")
 

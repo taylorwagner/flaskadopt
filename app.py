@@ -25,7 +25,7 @@ def homepage():
     return render_template("index.html", pets=pets)
 
 
-@app.route('/add')
+@app.route('/add', methods=['GET', 'POST'])
 def add_pet():
 
     form = AddNewPetForm()

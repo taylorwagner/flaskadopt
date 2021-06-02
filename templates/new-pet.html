@@ -2,6 +2,7 @@
     {% block title %}Adding New Pet{% endblock %}
     {% block content %}
     <h1>Add a New Pet</h1>
+    <div class="container">
     <form id="add-pet-form" method="POST">
         {{ form.hidden_tag() }}
       
@@ -19,6 +20,7 @@
       
         {% endfor %}
       
-        <button type="submit">Submit</button>
+        <button type="submit" class="btn btn-primary mb-3">Submit</button>
       </form>
+    </div>
 {% endblock %}

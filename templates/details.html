@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{pet.name}} Details</title>
+</head>
+<body>
+    <h1>{{pet.name}} Details Page</h1>
+    <div>
+        <p><b>Name:</b> {{pet.name}}</p>
+        <p><b>Species:</b> {{pet.species}}</p>
+        {% if pet.photo_url %}
+        <p><img src="{{pet.photo_url}}" alt=""></p>
+        {% endif %}
+        {% if pet.age %}
+        <p><b>Age:</b> {{pet.age}}</p>
+        {% endif %}
+    </div>
+    
+</body>
+</html>

@@ -42,10 +42,19 @@ def add_pet():
 
         db.session.add(new_pet)
         db.session.commit()
-        
+
         flash(f"Added new pet:{name}!")
         return redirect("/")
 
     else:
         return render_template(
             "new-pet.html", form=form)
+
+
+@app.route('/<int:pet_id>')
+def pet_details(pet_id):
+    """Make a page that shows some information about the pet, and It should also show a form that allows us to edit this pet"""
+
+    pet = Pet.query.get_or_404(pet_id)
+
+    return render_template('details.html', pet=pet)

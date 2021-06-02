@@ -55,9 +55,8 @@ def add_pet():
 def pet_details(pet_id):
     """Make a page that shows some information about an individual pet, and the page should also show a form that allows edits of pet"""
 
-    form = EditPetForm()
-
     pet = Pet.query.get_or_404(pet_id)
+    form = EditPetForm(obj=pet)
 
     if form.validate_on_submit():
         pet.photo_url = form.photo_url.data

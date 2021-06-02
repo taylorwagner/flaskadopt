@@ -9,6 +9,12 @@
 <body>
     <h1>{{pet.name}} Details Page</h1>
     <div>
+        {% for msg in get_flashed_messages() %}
+        <div>{{ msg }}</div>
+        {% endfor %}
+    </div>
+
+    <div>
         <p><b>Name:</b> {{pet.name}}</p>
         <p><b>Species:</b> {{pet.species}}</p>
         {% if pet.photo_url %}
@@ -18,6 +24,27 @@
         <p><b>Age:</b> {{pet.age}}</p>
         {% endif %}
     </div>
+
+    <h2>Edit {{pet.name}}</h2>
+    <form id="edit-pet-form" method="POST">
+        {{ form.hidden_tag() }}
+      
+        {% for field in form
+               if field.widget.input_type != 'hidden' %}
+      
+          <p>
+            {{ field.label }}
+            {{ field }}
+      
+            {% for error in field.errors %}
+              {{ error }}
+            {% endfor %}
+          </p>
+      
+        {% endfor %}
+      
+        <button type="submit">Submit</button>
+      </form>
     
 </body>
 </html>

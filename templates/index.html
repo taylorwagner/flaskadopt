@@ -7,19 +7,34 @@
     <div>{{ msg }}</div>
     {% endfor %}
 
-    <div>
-        {% for pet in pets %}
-        {% if pet.photo_url %}
-        <img src="{{pet.photo_url}}" alt="">
-        {% else %}
-        <h3>No photo available for {{pet.name}} at this time</h3>
-        {% endif %}
-        {% if pet.available %}
-        <p><a href="/{{pet.id}}">{{pet.name}}</a> <b>is available!</b></p>
-        {% else %}
-        <p>Sorry, <a href="/{{pet.id}}">{{pet.name}}</a> is currently not available!</p>
-        {% endif %}
-        {% endfor %}
+    <div class="container">
+        <div class="row align items-start">
+            <div class="col">
+                <h2>Available Pets</h2>
+                {% for pet in pets %}
+                    {% if pet.available %}
+                    {% if pet.photo_url %}
+                    <img src="{{pet.photo_url}}" alt="">
+                    {% else %}
+                    <h3>No photo available for {{pet.name}} at this time</h3>
+                    {% endif %}
+                    <p><a href="/{{pet.id}}">{{pet.name}}</a> <b>is available!</b></p>
+            </div>
+
+            <div class="col">
+                <h2>Unavailable Pets</h2>
+                {% else %}
+                    {% if pet.photo_url %}
+                    <img src="{{pet.photo_url}}" alt="">
+                    {% else %}
+                    <h3>No photo available for {{pet.name}} at this time</h3>
+                    {% endif %}
+                    <p>Sorry, <a href="/{{pet.id}}">{{pet.name}}</a> is currently not available!</p>
+                    {% endif %}
+                {% endfor %}
+                
+            </div>
+        </div>
     </div>
 
     <div>

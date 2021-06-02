@@ -60,13 +60,10 @@ def pet_details(pet_id):
     pet = Pet.query.get_or_404(pet_id)
 
     if form.validate_on_submit():
-        photo_url = form.photo_url.data
-        notes = form.notes.data
-        available = form.available.data
+        pet.photo_url = form.photo_url.data
+        pet.notes = form.notes.data
+        pet.available = form.available.data
 
-        pet_edits = Pet(photo_url=photo_url, notes=notes, available=available)
-
-        db.session.add(pet_edits)
         db.session.commit()
 
         flash(f"Edited pet information!")

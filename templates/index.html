@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
     {% block title %}Pet Adoption Agency{% endblock %}
     {% block content %}
-    <h1>Pets</h1>
+    <h1 class="display-1">Pets</h1>
 
     {% for msg in get_flashed_messages() %}
     <div>{{ msg }}</div>
@@ -11,24 +11,24 @@
         <div class="row align items-start">
             <div class="row">
             <div class="col">
-                <h2>Available Pets</h2>
+                <h2 class="display-2">Available Pets</h2>
                 {% for pet in pets %}
                     {% if pet.available %}
                     {% if pet.photo_url %}
                     <img src="{{pet.photo_url}}" alt="">
                     {% else %}
-                    <h3>No photo available for {{pet.name}} at this time</h3>
+                    <h3 class="display-3">No photo available for {{pet.name}} at this time</h3>
                     {% endif %}
                     <p><a href="/{{pet.id}}">{{pet.name}}</a> <b>is available!</b></p>
             </div>
 
             <div class="col">
-                <h2>Unavailable Pets</h2>
+                <h2 class="display-2">Unavailable Pets</h2>
                 {% else %}
                     {% if pet.photo_url %}
                     <img src="{{pet.photo_url}}" alt="">
                     {% else %}
-                    <h3>No photo available for {{pet.name}} at this time</h3>
+                    <h3 class="display-3">No photo available for {{pet.name}} at this time</h3>
                     {% endif %}
                     <p>Sorry, <a href="/{{pet.id}}">{{pet.name}}</a> is currently not available!</p>
                     {% endif %}

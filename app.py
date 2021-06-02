@@ -18,7 +18,7 @@ db.create_all()
 
 @app.route('/')
 def homepage():
-    """Show list of pets"""
+    """Show list of all pets and whether they are available or not"""
 
     pets = Pet.query.all()
 
@@ -27,7 +27,7 @@ def homepage():
 
 @app.route('/add', methods=['GET', 'POST'])
 def add_pet():
-    """Pet add form; handle adding"""
+    """Add a new pet form; handle adding of new pet"""
 
     form = AddNewPetForm()
 
@@ -53,7 +53,7 @@ def add_pet():
 
 @app.route('/<int:pet_id>', methods=['GET', 'POST'])
 def pet_details(pet_id):
-    """Make a page that shows some information about the pet, and It should also show a form that allows us to edit this pet"""
+    """Make a page that shows some information about an individual pet, and the page should also show a form that allows edits of pet"""
 
     form = EditPetForm()
 

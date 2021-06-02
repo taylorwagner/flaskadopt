@@ -43,7 +43,7 @@ def add_pet():
         db.session.add(new_pet)
         db.session.commit()
 
-        flash(f"Added new pet:{name}!")
+        flash(f"Added new pet: {name}!")
         return redirect("/")
 
     else:
@@ -70,6 +70,6 @@ def pet_details(pet_id):
         db.session.commit()
 
         flash(f"Edited pet information!")
-        return redirect("/{{pet.id}}")
+        return redirect(f"/{pet.id}")
 
     return render_template('details.html', pet=pet, form=form)

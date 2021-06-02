@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
     {% block title %}Pet Adoption Agency{% endblock %}
     {% block content %}
+    <div class="container">
     <h1 class="display-1">Pets</h1>
+    </div>
 
     {% for msg in get_flashed_messages() %}
     <div class="alert alert-warning alert-dismissible fade show" role="alert">{{ msg }}
@@ -41,7 +43,7 @@
         </div>
     </div>
 
-    <div>
+    <div class="container">
         <a href="/add">Add a New Pet</a>
     </div>
 {% endblock %}

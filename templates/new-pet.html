@@ -3,7 +3,7 @@
     {% block content %}
     <div class="container">
     <h1 class="display-1">Add a New Pet</h1>
-    <form id="add-pet-form" method="POST">
+    <form id="add-pet-form" method="POST" novalidate=True>
         {{ form.hidden_tag() }}
       
         {% for field in form

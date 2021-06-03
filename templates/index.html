@@ -11,8 +11,8 @@
 
     <div class="container">
         <div class="row align-items-start">
-            <h2 class="display-2">Available Pets</h2>
             <div class="col">
+                <h2 class="display-2">Available Pets</h2>
                 {% for pet in pets %}
                     {% if pet.available %}
                     {% if pet.photo_url %}
@@ -26,8 +26,8 @@
             </div>
 
             
-            <h2 class="display-2">Unavailable Pets</h2>
             <div class="col">
+                <h2 class="display-2">Unavailable Pets</h2>
                 {% for pet in pets %}
                     {% if pet.available == False%}
                     {% if pet.photo_url %}

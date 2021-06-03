@@ -21,12 +21,15 @@
                     <h3 class="display-3">No photo available for {{pet.name}} at this time</h3>
                     {% endif %}
                     <p><a href="/{{pet.id}}">{{pet.name}}</a> <b>is available!</b></p>
+                    {% endif %}
+                {% endfor %}
             </div>
 
             
             <h2 class="display-2">Unavailable Pets</h2>
             <div class="col">
-                {% else %}
+                {% for pet in pets %}
+                    {% if pet.available == False%}
                     {% if pet.photo_url %}
                     <img src="{{pet.photo_url}}" alt="">
                     {% else %}
